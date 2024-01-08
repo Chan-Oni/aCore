@@ -39,7 +39,7 @@
                         </goals>
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
-                            <outputDirectory>/Users/Rafafous/Desktop/</outputDirectory>
+                            <outputDirectory>/Users/Rafafous/Desktop/LOCALHOST/plugins</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>

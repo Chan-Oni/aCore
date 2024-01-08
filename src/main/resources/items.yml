@@ -1,4 +1,8 @@
+#Display de la durabilité dans le lore des items.
+
 durability: "&f» &7Durabilité &8: &f%durability%&7/&8%maxdurability%"
+
+#Hammers
 
 hammer_level_1:
   name: "&eHammer Niv.1"
@@ -31,3 +35,29 @@ hammer_level_3:
     - "&fLigne 3..."
   durability: 10000
 
+#Houes de farm
+
+hoe_level_1:
+  name: "&eHoue de Farm Niv.1"
+  glow: true
+  lore:
+    - "&fLigne 1"
+    - "&fLigne 2"
+    - "&fLigne 3..."
+  durability: 2000
+hoe_level_2:
+  name: "&6Houe de Farm Niv.2"
+  glow: true
+  lore:
+    - "&fLigne 1"
+    - "&fLigne 2"
+    - "&fLigne 3..."
+  durability: 5000
+hoe_level_3:
+  name: "&6Houe de Farm Niv.3"
+  glow: true
+  lore:
+    - "&fLigne 1"
+    - "&fLigne 2"
+    - "&fLigne 3..."
+  durability: 10000

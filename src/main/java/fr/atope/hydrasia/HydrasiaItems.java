@@ -1,5 +1,6 @@
 package fr.atope.hydrasia;
 
+import fr.atope.hydrasia.commands.HydrasiaCommand;
 import fr.atope.hydrasia.configs.ItemFile;
 import fr.atope.hydrasia.items.ItemManager;
 import fr.leyra.main.VPlugin;
@@ -20,6 +21,8 @@ public final class HydrasiaItems extends VPlugin {
         getConfigManager().registerConfig(new ItemFile());
 
         ItemManager.getINSTANCE().init();
+
+        registerCommand(new HydrasiaCommand(this));
 
         sendInfo(ChatColor.GOLD + "\n" +
                 " __    __                  __                               __            ______   __                                       \n" +
