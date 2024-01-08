@@ -1,3 +1,8 @@
 name: HydrasiaItems
 version: '${project.version}'
 main: fr.atope.hydrasia.HydrasiaItems
+authors: [Leyra, Kairo]
+depend:
+  - VCore
+  - WorldGuard
+  - Vault

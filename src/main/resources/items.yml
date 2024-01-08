@@ -1,0 +1,33 @@
+durability: "&f» &7Durabilité &8: &f%durability%&7/&8%maxdurability%"
+
+hammer_level_1:
+  name: "&eHammer Niv.1"
+  enchantments:
+    DURABILITY: 1
+    DIG_SPEED: 2
+  lore:
+    - "&fLigne 1"
+    - "&fLigne 2"
+    - "&fLigne 3..."
+  durability: 2000
+hammer_level_2:
+  name: "&6Hammer Niv.2"
+  enchantments:
+    DURABILITY: 2
+    DIG_SPEED: 4
+  lore:
+    - "&fLigne 1"
+    - "&fLigne 2"
+    - "&fLigne 3..."
+  durability: 5000
+hammer_level_3:
+  name: "&6Hammer Niv.3"
+  enchantments:
+    DURABILITY: 4
+    DIG_SPEED: 6
+  lore:
+    - "&fLigne 1"
+    - "&fLigne 2"
+    - "&fLigne 3..."
+  durability: 10000
+
