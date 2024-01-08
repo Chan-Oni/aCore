@@ -1,8 +1,8 @@
-package fr.atope.hydrasia.commands;
+package fr.atope.atools.commands;
 
-import fr.atope.hydrasia.HydrasiaItems;
-import fr.atope.hydrasia.items.ItemManager;
-import fr.atope.hydrasia.menu.HydrasiaMenu;
+import fr.atope.atools.ATools;
+import fr.atope.atools.items.ItemManager;
+import fr.atope.atools.menu.AMenu;
 import fr.leyra.commands.Command;
 import fr.leyra.commands.CommandArgs;
 import org.bukkit.Bukkit;
@@ -10,11 +10,11 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-public class HydrasiaCommand {
+public class ACommand {
 
-    private HydrasiaItems main;
+    private ATools main;
 
-    public HydrasiaCommand(HydrasiaItems main) {
+    public ACommand(ATools main) {
         this.main = main;
     }
 
@@ -25,7 +25,7 @@ public class HydrasiaCommand {
 
         if (cmd.getArgs().length == 0) {
             if (!cmd.isPlayer()) return;
-            HydrasiaMenu menu = new HydrasiaMenu(cmd.getPlayer());
+            AMenu menu = new AMenu(cmd.getPlayer());
             menu.open();
         }
 

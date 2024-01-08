@@ -1,6 +1,6 @@
-package fr.atope.hydrasia.menu;
+package fr.atope.atools.menu;
 
-import fr.atope.hydrasia.items.ItemManager;
+import fr.atope.atools.items.ItemManager;
 import fr.leyra.gui.Menu;
 import fr.leyra.objects.ItemStackBuilder;
 import org.bukkit.ChatColor;
@@ -10,9 +10,9 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.inventory.ItemStack;
 
-public class HydrasiaMenu extends Menu {
+public class AMenu extends Menu {
 
-    public HydrasiaMenu(Player player) {
+    public AMenu(Player player) {
         super(player);
     }
 

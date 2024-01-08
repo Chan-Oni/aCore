@@ -3,4 +3,4 @@ prices:
   price-to-hammer-level-3: 10000000
 
 permissions:
-  hydrasia-command: "hydrasia-command.use"
+  hydrasia-command: "atope-command.use"

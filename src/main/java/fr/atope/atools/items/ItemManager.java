@@ -1,6 +1,6 @@
-package fr.atope.hydrasia.items;
+package fr.atope.atools.items;
 
-import fr.atope.hydrasia.HydrasiaItems;
+import fr.atope.atools.ATools;
 import fr.leyra.objects.ItemStackBuilder;
 import lombok.Getter;
 import org.bukkit.Material;
@@ -14,7 +14,7 @@ public class ItemManager {
     private static final ItemManager INSTANCE = new ItemManager();
     @Getter
     public LinkedHashMap<String, ItemStack> items = new LinkedHashMap<>();
-    private HydrasiaItems main = HydrasiaItems.getINSTANCE();
+    private ATools main = ATools.getINSTANCE();
 
     public ItemStack hammer_level_1, hammer_level_2, hammer_level_3, farmhoe_level_1, farmhoe_level_2, farmhoe_level_3;
 

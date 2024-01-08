@@ -1,6 +1,6 @@
-name: HydrasiaItems
+name: ATools
 version: '${project.version}'
-main: fr.atope.hydrasia.HydrasiaItems
+main: fr.atope.atools.ATools
 authors: [Leyra, Kairo]
 depend:
   - VCore

@@ -1,6 +1,6 @@
-package fr.atope.hydrasia.configs;
+package fr.atope.atools.configs;
 
-import fr.atope.hydrasia.HydrasiaItems;
+import fr.atope.atools.ATools;
 import fr.leyra.files.ConfigFile;
 import org.bukkit.ChatColor;
 
@@ -9,7 +9,7 @@ import java.io.File;
 public class ItemFile extends ConfigFile {
 
     public ItemFile() {
-        super(HydrasiaItems.getINSTANCE());
+        super(ATools.getINSTANCE());
     }
 
     @Override
@@ -29,6 +29,6 @@ public class ItemFile extends ConfigFile {
 
     @Override
     public File getFile() {
-        return new File(HydrasiaItems.getINSTANCE().getDataFolder(), getFileName());
+        return new File(ATools.getINSTANCE().getDataFolder(), getFileName());
     }
 }
