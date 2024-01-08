@@ -32,8 +32,9 @@ public class HydrasiaMenu extends Menu {
         if(event.getRawSlot() >= 54) {
             event.setCancelled(false);
         } else {
-            if(event.getCurrentItem().getType() != Material.STAINED_GLASS_PANE) return;
-            event.getWhoClicked().getInventory().addItem(event.getCurrentItem());
+            if(event.getCurrentItem().getType() != Material.STAINED_GLASS_PANE) {
+                event.getWhoClicked().getInventory().addItem(event.getCurrentItem());
+            }
         }
 
     }

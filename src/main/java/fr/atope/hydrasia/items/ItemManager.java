@@ -3,6 +3,7 @@ package fr.atope.hydrasia.items;
 import fr.atope.hydrasia.HydrasiaItems;
 import fr.leyra.objects.ItemStackBuilder;
 import lombok.Getter;
+import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.LinkedHashMap;
@@ -24,15 +25,15 @@ public class ItemManager {
 
     private void createHammer() {
 
-        hammer_level_1 = new ItemStackBuilder()
+        hammer_level_1 = new ItemStackBuilder(Material.getMaterial(main.getConfigManager().getConfigFile("items.yml").getString("hammer_level_1.material")))
                 .setFileMeta("hammer_level_1", main.getConfigManager().getConfigFile("items.yml"))
                 .make();
         registerItems("hammer_level_1", hammer_level_1);
-        hammer_level_2 = new ItemStackBuilder()
+        hammer_level_2 = new ItemStackBuilder(Material.getMaterial(main.getConfigManager().getConfigFile("items.yml").getString("hammer_level_2.material")))
                 .setFileMeta("hammer_level_2", main.getConfigManager().getConfigFile("items.yml"))
                 .make();
         registerItems("hammer_level_2", hammer_level_2);
-        hammer_level_3 = new ItemStackBuilder()
+        hammer_level_3 = new ItemStackBuilder(Material.getMaterial(main.getConfigManager().getConfigFile("items.yml").getString("hammer_level_3.material")))
                 .setFileMeta("hammer_level_3", main.getConfigManager().getConfigFile("items.yml"))
                 .make();
         registerItems("hammer_level_3", hammer_level_3);
@@ -41,15 +42,15 @@ public class ItemManager {
 
     private void createHoe() {
 
-        farmhoe_level_1 = new ItemStackBuilder()
+        farmhoe_level_1 = new ItemStackBuilder(Material.getMaterial(main.getConfigManager().getConfigFile("items.yml").getString("farmhoe_level_1.material")))
                 .setFileMeta("farmhoe_level_1", main.getConfigManager().getConfigFile("items.yml"))
                 .make();
         registerItems("farmhoe_level_1", farmhoe_level_1);
-        farmhoe_level_2 = new ItemStackBuilder()
+        farmhoe_level_2 = new ItemStackBuilder(Material.getMaterial(main.getConfigManager().getConfigFile("items.yml").getString("farmhoe_level_2.material")))
                 .setFileMeta("farmhoe_level_2", main.getConfigManager().getConfigFile("items.yml"))
                 .make();
         registerItems("farmhoe_level_2", farmhoe_level_2);
-        farmhoe_level_3 = new ItemStackBuilder()
+        farmhoe_level_3 = new ItemStackBuilder(Material.getMaterial(main.getConfigManager().getConfigFile("items.yml").getString("farmhoe_level_3.material")))
                 .setFileMeta("farmhoe_level_3", main.getConfigManager().getConfigFile("items.yml"))
                 .make();
         registerItems("farmhoe_level_3", farmhoe_level_3);
