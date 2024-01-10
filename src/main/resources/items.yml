@@ -4,35 +4,12 @@ durability: "&f» &7Durabilité &8: &f%durability%&7/&8%max_durability%"
 
 # Possibilité de rajouter les tags :
 #  unbreakable: true | pour indiquer qu'un item n'a pas de durabilité
-#
+# si appliqué, il serait recommandé d'enlever le tag 'durability'.
 
-#Hammers
-
-hammer_level_1:
+#Hammer
+hammer:
   material: "DIAMOND_PICKAXE"
-  name: "&eHammer Niv.1"
-  enchantments:
-    DURABILITY: 1
-    DIG_SPEED: 2
-  lore:
-    - "&fLigne 1"
-    - "&fLigne 2"
-    - "&fLigne 3..."
-  durability: 2000
-hammer_level_2:
-  material: "DIAMOND_PICKAXE"
-  name: "&6Hammer Niv.2"
-  enchantments:
-    DURABILITY: 2
-    DIG_SPEED: 4
-  lore:
-    - "&fLigne 1"
-    - "&fLigne 2"
-    - "&fLigne 3..."
-  durability: 5000
-hammer_level_3:
-  material: "DIAMOND_PICKAXE"
-  name: "&6Hammer Niv.3"
+  name: "&6Hammer"
   enchantments:
     DURABILITY: 4
     DIG_SPEED: 6
@@ -42,32 +19,13 @@ hammer_level_3:
     - "&fLigne 3..."
   durability: 10000
 
-#Houes de farm
-
-farmhoe_level_1:
-  material: "IRON_HOE"
-  name: "&eHoue de Farm Niv.1"
+#Houe de farm
+farm_hoe:
+  material: "GOLD_HOE"
+  name: "&eHoue de Farm"
   glow: true
   lore:
     - "&fLigne 1"
     - "&fLigne 2"
     - "&fLigne 3..."
   durability: 2000
-farmhoe_level_2:
-  material: "GOLD_HOE"
-  name: "&6Houe de Farm Niv.2"
-  glow: true
-  lore:
-    - "&fLigne 1"
-    - "&fLigne 2"
-    - "&fLigne 3..."
-  durability: 5000
-farmhoe_level_3:
-  material: "DIAMOND_HOE"
-  name: "&6Houe de Farm Niv.3"
-  glow: true
-  lore:
-    - "&fLigne 1"
-    - "&fLigne 2"
-    - "&fLigne 3..."
-  durability: 10000

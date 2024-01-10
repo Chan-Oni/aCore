@@ -1,0 +1,10 @@
+prefix: "&8&l(&ea&6Core&8&l) &7» &f"
+
+no-permission: "%prefix% &cVous n'avez pas la permission !"
+
+only-player: "%prefix% Seul les joueurs peuvent exécuter la commande !"
+
+reload-message: "%prefix% Reloaded !"
+
+vision-active: "%prefix% Night Vision &aactivé &f!"
+vision-non-active: "%prefix% Night Vision &cdésactivé &f!"

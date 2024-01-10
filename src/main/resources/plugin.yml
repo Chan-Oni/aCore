@@ -1,6 +1,6 @@
-name: ATools
+name: aCore
 version: '${project.version}'
-main: fr.atope.atools.ATools
+main: fr.atope.acore.ACore
 authors: [Leyra, Kairo]
 depend:
   - VCore

@@ -18,7 +18,7 @@ public class AMenu extends Menu {
 
     @Override
     public String getMenuName() {
-        return ChatColor.GOLD + "" + ChatColor.BOLD + "Hydrasia Items";
+        return ChatColor.GOLD + "" + ChatColor.BOLD + "aCore Items";
     }
 
     @Override
@@ -47,7 +47,7 @@ public class AMenu extends Menu {
 
         setOutlines(new ItemStackBuilder(new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte) 14)).setName(" ").make());
 
-        ItemManager.getInstance().items.forEach((s, itemStack) -> inventory.addItem(itemStack));
+        ItemManager.getInstance().getItems().forEach((s, itemStack) -> inventory.addItem(itemStack));
 
     }
 }

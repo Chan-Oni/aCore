@@ -1,9 +1,15 @@
 package fr.atope.acore;
 
+import com.sk89q.worldguard.WorldGuard;
 import fr.atope.acore.commands.ACommand;
 import fr.atope.acore.commands.AItemsCommand;
+import fr.atope.acore.commands.VisionCommand;
 import fr.atope.acore.configs.ItemFile;
 import fr.atope.acore.configs.MessageFile;
+import fr.atope.acore.dependencies.WorldGuardManager;
+import fr.atope.acore.events.FarmHoeEvent;
+import fr.atope.acore.events.HammerEvents;
+import fr.atope.acore.events.PlayerJoinEvent;
 import fr.atope.acore.items.ItemManager;
 import fr.leyra.main.VPlugin;
 import lombok.Getter;
@@ -12,11 +18,16 @@ public final class ACore extends VPlugin {
 
     @Getter
     private static ACore instance;
+    @Getter
+    private WorldGuardManager worldGuardManager;
 
     @Override
     public void onPluginEnable() {
 
+        long sst = System.currentTimeMillis();
+
         instance = this;
+        worldGuardManager = new WorldGuardManager();
 
         saveDefaultConfig();
         getConfigManager().registerConfig(new ItemFile());
@@ -26,16 +37,30 @@ public final class ACore extends VPlugin {
 
         registerCommand(new ACommand(this));
         registerCommand(new AItemsCommand(this));
+        registerCommand(new VisionCommand(this));
+
+        registerEvent(new PlayerJoinEvent());
+        registerEvent(new HammerEvents(this));
+        registerEvent(new FarmHoeEvent(this));
+
+        sendInfo("Implementation time: " + (-sst + System.currentTimeMillis()) + " ms");
 
     }
 
     @Override
     public void onPluginDisable() {
-
     }
 
     @Override
     public String getPrefix() {
-        return "ATools";
+        return getConfigManager().getConfigFile("messages.yml").getString("prefix");
+    }
+
+    public WorldGuard getWorldGuard() {
+        return WorldGuard.getInstance();
+    }
+
+    public String getDurabilityPlaceholder() {
+        return getConfigManager().getConfigFile("items.yml").getString("durability");
     }
 }

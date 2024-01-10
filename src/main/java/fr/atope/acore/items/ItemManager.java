@@ -3,6 +3,7 @@ package fr.atope.acore.items;
 import fr.atope.acore.ACore;
 import fr.leyra.objects.ItemStackBuilder;
 import lombok.Getter;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
@@ -13,48 +14,31 @@ public class ItemManager {
     @Getter
     private static final ItemManager instance = new ItemManager();
     @Getter
-    public LinkedHashMap<String, ItemStack> items = new LinkedHashMap<>();
+    private LinkedHashMap<String, ItemStack> items = new LinkedHashMap<>();
     private ACore main = ACore.getInstance();
 
-    public ItemStack hammer_level_1, hammer_level_2, hammer_level_3, farmhoe_level_1, farmhoe_level_2, farmhoe_level_3;
-
     public void init() {
-        createHammer();
-        createHoe();
+        createTools();
     }
 
-    private void createHammer() {
-
-        hammer_level_1 = new ItemStackBuilder(Material.getMaterial(main.getConfigManager().getConfigFile("items.yml").getString("hammer_level_1.material")))
-                .setFileMeta("hammer_level_1", main.getConfigManager().getConfigFile("items.yml"))
-                .make();
-        registerItems("hammer_level_1", hammer_level_1);
-        hammer_level_2 = new ItemStackBuilder(Material.getMaterial(main.getConfigManager().getConfigFile("items.yml").getString("hammer_level_2.material")))
-                .setFileMeta("hammer_level_2", main.getConfigManager().getConfigFile("items.yml"))
-                .make();
-        registerItems("hammer_level_2", hammer_level_2);
-        hammer_level_3 = new ItemStackBuilder(Material.getMaterial(main.getConfigManager().getConfigFile("items.yml").getString("hammer_level_3.material")))
-                .setFileMeta("hammer_level_3", main.getConfigManager().getConfigFile("items.yml"))
-                .make();
-        registerItems("hammer_level_3", hammer_level_3);
-
+    private void createTools() {
+        createItems("hammer", "farm_hoe");
     }
 
-    private void createHoe() {
+    private void createItems(String... configKeys) {
+        for (String configKey : configKeys) {
+            ItemStack itemStack = createItem(configKey);
+            registerItems(configKey, itemStack);
+        }
+    }
 
-        farmhoe_level_1 = new ItemStackBuilder(Material.getMaterial(main.getConfigManager().getConfigFile("items.yml").getString("farmhoe_level_1.material")))
-                .setFileMeta("farmhoe_level_1", main.getConfigManager().getConfigFile("items.yml"))
+    public ItemStack createItem(String configKey) {
+        if (!main.getConfigManager().getConfigFile("items.yml").getCustomConfig().isConfigurationSection(configKey)) {
+            return new ItemStackBuilder(new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte) 14)).setName(ChatColor.RED + "INVALID ITEM " + configKey).make();
+        }
+        return new ItemStackBuilder(Material.getMaterial(main.getConfigManager().getConfigFile("items.yml").getString(configKey + ".material")))
+                .setFileMeta(configKey, main.getConfigManager().getConfigFile("items.yml"))
                 .make();
-        registerItems("farmhoe_level_1", farmhoe_level_1);
-        farmhoe_level_2 = new ItemStackBuilder(Material.getMaterial(main.getConfigManager().getConfigFile("items.yml").getString("farmhoe_level_2.material")))
-                .setFileMeta("farmhoe_level_2", main.getConfigManager().getConfigFile("items.yml"))
-                .make();
-        registerItems("farmhoe_level_2", farmhoe_level_2);
-        farmhoe_level_3 = new ItemStackBuilder(Material.getMaterial(main.getConfigManager().getConfigFile("items.yml").getString("farmhoe_level_3.material")))
-                .setFileMeta("farmhoe_level_3", main.getConfigManager().getConfigFile("items.yml"))
-                .make();
-        registerItems("farmhoe_level_3", farmhoe_level_3);
-
     }
 
     private void registerItems(String name, ItemStack itemStack) {

@@ -56,10 +56,10 @@ public class AItemsCommand {
             return;
         }
 
-        ItemStack item = ItemManager.getInstance().items.get(cmd.getArgs(1));
+        ItemStack item = ItemManager.getInstance().getItems().get(cmd.getArgs(1));
         if (item == null) {
             cmd.getSender().sendMessage(ChatColor.RED + "Item inconnu, voici la liste disponible : ");
-            ItemManager.getInstance().items.forEach((s, itemStack) -> cmd.getSender().sendMessage(ChatColor.RED + s));
+            ItemManager.getInstance().getItems().forEach((s, itemStack) -> cmd.getSender().sendMessage(ChatColor.RED + s));
             return;
         }
 

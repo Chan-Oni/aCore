@@ -17,7 +17,7 @@ public class MessageFile extends ConfigFile {
 
     @Override
     public String autoReplace(String s) {
-        return ChatColor.translateAlternateColorCodes('&', s);
+        return ChatColor.translateAlternateColorCodes('&', s.replaceAll("%prefix%", getCustomConfig().getString("prefix")));
     }
 
 }

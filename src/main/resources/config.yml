@@ -1,8 +1,5 @@
-prices:
-  price-to-hammer-level-2: 2000000
-  price-to-hammer-level-3: 10000000
-
 permissions:
   acore-use: "acore.command.use"
   acore-reload: "acore.command.reload"
   items-command: "acore.item-command.use"
+  vision-use: "acore.vision.use"
