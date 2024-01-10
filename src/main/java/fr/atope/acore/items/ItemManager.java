@@ -1,6 +1,6 @@
-package fr.atope.atools.items;
+package fr.atope.acore.items;
 
-import fr.atope.atools.ATools;
+import fr.atope.acore.ACore;
 import fr.leyra.objects.ItemStackBuilder;
 import lombok.Getter;
 import org.bukkit.Material;
@@ -11,10 +11,10 @@ import java.util.LinkedHashMap;
 public class ItemManager {
 
     @Getter
-    private static final ItemManager INSTANCE = new ItemManager();
+    private static final ItemManager instance = new ItemManager();
     @Getter
     public LinkedHashMap<String, ItemStack> items = new LinkedHashMap<>();
-    private ATools main = ATools.getINSTANCE();
+    private ACore main = ACore.getInstance();
 
     public ItemStack hammer_level_1, hammer_level_2, hammer_level_3, farmhoe_level_1, farmhoe_level_2, farmhoe_level_3;
 

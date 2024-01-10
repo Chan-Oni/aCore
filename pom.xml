@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>fr.atope</groupId>
-    <artifactId>ATools</artifactId>
+    <artifactId>aCore</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 
-    <name>ATools</name>
+    <name>aCore</name>
 
     <properties>
         <java.version>1.8</java.version>
@@ -86,7 +86,7 @@
             <artifactId>VCore</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>/Users/Rafafous/Desktop/LOCALHOST/plugins/original-VCore-1.0.jar</systemPath>
+            <systemPath>/Users/Rafafous/Documents/PluginDev/aCore/vcore/original-VCore-1.0.jar</systemPath>
         </dependency>
         <!--Vault-->
         <dependency>

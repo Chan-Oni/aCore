@@ -1,8 +1,8 @@
-package fr.atope.atools.commands;
+package fr.atope.acore.commands;
 
-import fr.atope.atools.ATools;
-import fr.atope.atools.items.ItemManager;
-import fr.atope.atools.menu.AMenu;
+import fr.atope.acore.ACore;
+import fr.atope.acore.items.ItemManager;
+import fr.atope.acore.menu.AMenu;
 import fr.leyra.commands.Command;
 import fr.leyra.commands.CommandArgs;
 import org.bukkit.Bukkit;
@@ -10,18 +10,18 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-public class ACommand {
+public class AItemsCommand {
 
-    private ATools main;
+    private ACore main;
 
-    public ACommand(ATools main) {
+    public AItemsCommand(ACore main) {
         this.main = main;
     }
 
-    @Command(name = "hydrasia")
-    public void hydrasiaCommand(CommandArgs cmd) {
+    @Command(name = "aitems", aliases = "aitem")
+    public void itemsCommand(CommandArgs cmd) {
 
-        if (!cmd.getSender().hasPermission(main.getConfig().getString("permissions.hydrasia-command"))) return;
+        if (!cmd.getSender().hasPermission(main.getConfig().getString("permissions.items-command"))) return;
 
         if (cmd.getArgs().length == 0) {
             if (!cmd.isPlayer()) return;
@@ -31,14 +31,14 @@ public class ACommand {
 
     }
 
-    @Command(name = "hydrasia.give")
-    public void hydrasiaGive(CommandArgs cmd) {
+    @Command(name = "aitems.give", aliases = "aitem.give")
+    public void itemsGiveCommand(CommandArgs cmd) {
 
-        if (!cmd.getSender().hasPermission(main.getConfig().getString("permissions.hydrasia-command"))) return;
+        if (!cmd.getSender().hasPermission(main.getConfig().getString("permissions.item-command"))) return;
 
         // /hydrasia give %player% %item% %amount%
         if (cmd.getArgs().length < 3) {
-            cmd.getSender().sendMessage(ChatColor.RED + "/hydrasia give %player% %item% %amount%");
+            cmd.getSender().sendMessage(ChatColor.RED + "/aitems give %player% %item% %amount%");
             return;
         }
 
@@ -52,16 +52,14 @@ public class ACommand {
         try {
             amount = Integer.parseInt(cmd.getArgs(2));
         } catch (NumberFormatException e) {
-            cmd.getSender().sendMessage(ChatColor.RED + "/hydrasia give %player% %item% %amount%");
+            cmd.getSender().sendMessage(ChatColor.RED + "/aitems give %player% %item% %amount%");
             return;
         }
 
-        ItemStack item = ItemManager.getINSTANCE().items.get(cmd.getArgs(1));
+        ItemStack item = ItemManager.getInstance().items.get(cmd.getArgs(1));
         if (item == null) {
             cmd.getSender().sendMessage(ChatColor.RED + "Item inconnu, voici la liste disponible : ");
-            ItemManager.getINSTANCE().items.forEach((s, itemStack) -> {
-                cmd.getSender().sendMessage(ChatColor.RED + s);
-            });
+            ItemManager.getInstance().items.forEach((s, itemStack) -> cmd.getSender().sendMessage(ChatColor.RED + s));
             return;
         }
 

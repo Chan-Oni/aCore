@@ -1,6 +1,6 @@
-package fr.atope.atools.menu;
+package fr.atope.acore.menu;
 
-import fr.atope.atools.items.ItemManager;
+import fr.atope.acore.items.ItemManager;
 import fr.leyra.gui.Menu;
 import fr.leyra.objects.ItemStackBuilder;
 import org.bukkit.ChatColor;
@@ -47,7 +47,7 @@ public class AMenu extends Menu {
 
         setOutlines(new ItemStackBuilder(new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte) 14)).setName(" ").make());
 
-        ItemManager.getINSTANCE().items.forEach((s, itemStack) -> inventory.addItem(itemStack));
+        ItemManager.getInstance().items.forEach((s, itemStack) -> inventory.addItem(itemStack));
 
     }
 }

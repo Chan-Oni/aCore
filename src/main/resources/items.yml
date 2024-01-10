@@ -1,6 +1,6 @@
 #Display de la durabilité dans le lore des items.
 
-durability: "&f» &7Durabilité &8: &f%durability%&7/&8%maxDurability%"
+durability: "&f» &7Durabilité &8: &f%durability%&7/&8%max_durability%"
 
 # Possibilité de rajouter les tags :
 #  unbreakable: true | pour indiquer qu'un item n'a pas de durabilité
