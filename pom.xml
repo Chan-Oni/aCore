@@ -86,7 +86,7 @@
             <artifactId>VCore</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>/Users/Rafafous/Documents/PluginDev/aCore/vcore/original-VCore-1.0.jar</systemPath>
+            <systemPath>${basedir}/vcore/original-VCore-1.0.jar</systemPath>
         </dependency>
         <!--Vault-->
         <dependency>

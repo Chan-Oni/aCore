@@ -31,12 +31,11 @@ public class AItemsCommand {
 
     }
 
-    @Command(name = "aitems.give", aliases = "aitem.give")
+    @Command(name = "aitems.give", aliases = "aitem.give", usage = "aitems give [player] [item_id] [<amount>]")
     public void itemsGiveCommand(CommandArgs cmd) {
 
-        if (!cmd.getSender().hasPermission(main.getConfig().getString("permissions.item-command"))) return;
+        if (!cmd.getSender().hasPermission(main.getConfig().getString("permissions.items-command"))) return;
 
-        // /hydrasia give %player% %item% %amount%
         if (cmd.getArgs().length < 3) {
             cmd.getSender().sendMessage(ChatColor.RED + "/aitems give %player% %item% %amount%");
             return;
@@ -71,6 +70,16 @@ public class AItemsCommand {
         for (int i = 0; i < amount; i++) {
             target.getInventory().addItem(item);
         }
+
+    }
+
+    @Command(name = "aitems.list", aliases = "aitem.list")
+    public void itemsListCommand(CommandArgs cmd) {
+
+        if(!cmd.getSender().hasPermission(main.getConfig().getString("permissions.items-list"))) return;
+
+        cmd.getSender().sendMessage(ChatColor.GRAY + "Voici la liste des items disponibles : ");
+        ItemManager.getInstance().getItems().forEach((s, itemStack) -> cmd.getSender().sendMessage(ChatColor.GRAY + "- " + ChatColor.WHITE + s));
 
     }
 

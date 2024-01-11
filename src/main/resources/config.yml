@@ -2,4 +2,23 @@ permissions:
   acore-use: "acore.command.use"
   acore-reload: "acore.command.reload"
   items-command: "acore.item-command.use"
+  items-list: "acore.item-command.list"
   vision-use: "acore.vision.use"
+  chat-command-use: "acore.chat-command.use"
+  chat-bypass: "acore.chat.bypass"
+
+farm-hoe-drops-seed: true
+
+anti-spam-cooldown: 3
+
+anti-craft:
+  - 'BEDROCK'
+
+anti-insulte:
+  - 'fdp'
+  - 'connard'
+  - 'fils de neuille'
+  - 'salope'
+
+anti-potions:
+  - ''

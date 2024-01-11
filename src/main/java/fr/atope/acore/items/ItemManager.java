@@ -22,7 +22,7 @@ public class ItemManager {
     }
 
     private void createTools() {
-        createItems("hammer", "farm_hoe");
+        createItems("hammer", "farm_hoe", "dynamite");
     }
 
     private void createItems(String... configKeys) {

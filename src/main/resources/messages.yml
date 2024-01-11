@@ -8,3 +8,5 @@ reload-message: "%prefix% Reloaded !"
 
 vision-active: "%prefix% Night Vision &aactivé &f!"
 vision-non-active: "%prefix% Night Vision &cdésactivé &f!"
+
+chat-disabled: "%prefix% &cLe chat est actuellement désactivé."

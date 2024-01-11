@@ -3,13 +3,12 @@ package fr.atope.acore;
 import com.sk89q.worldguard.WorldGuard;
 import fr.atope.acore.commands.ACommand;
 import fr.atope.acore.commands.AItemsCommand;
+import fr.atope.acore.commands.ChatCommands;
 import fr.atope.acore.commands.VisionCommand;
 import fr.atope.acore.configs.ItemFile;
 import fr.atope.acore.configs.MessageFile;
 import fr.atope.acore.dependencies.WorldGuardManager;
-import fr.atope.acore.events.FarmHoeEvent;
-import fr.atope.acore.events.HammerEvents;
-import fr.atope.acore.events.PlayerJoinEvent;
+import fr.atope.acore.events.*;
 import fr.atope.acore.items.ItemManager;
 import fr.leyra.main.VPlugin;
 import lombok.Getter;
@@ -38,10 +37,13 @@ public final class ACore extends VPlugin {
         registerCommand(new ACommand(this));
         registerCommand(new AItemsCommand(this));
         registerCommand(new VisionCommand(this));
+        registerCommand(new ChatCommands(this));
 
         registerEvent(new PlayerJoinEvent());
+        registerEvent(new ChatEvent());
         registerEvent(new HammerEvents(this));
         registerEvent(new FarmHoeEvent(this));
+        registerEvent(new DynamiteEvent(this));
 
         sendInfo("Implementation time: " + (-sst + System.currentTimeMillis()) + " ms");
 

@@ -3,6 +3,7 @@ package fr.atope.acore.events;
 import fr.atope.acore.ACore;
 import fr.atope.acore.items.ItemManager;
 import fr.leyra.objects.ItemStackBuilder;
+import fr.leyra.utils.Randomness;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -49,8 +50,11 @@ public class FarmHoeEvent implements Listener {
                 if (!isCropMature(bR)) {
                     continue;
                 }
-                p.getWorld().dropItemNaturally(bR.getLocation(), new ItemStack(getSeedType(bR.getType()), 3));
-                bR.breakNaturally();
+                if(bR.getType().equals(Material.CROPS) && !main.getConfig().getBoolean("farm-hoe-drops-seed")) {
+                    p.getWorld().dropItemNaturally(bR.getLocation(), new ItemStack(Material.WHEAT, new Randomness().getRandomInt(1, 3)));
+                } else {
+                    bR.breakNaturally();
+                }
                 if ((!m.equals(Material.NETHER_WARTS) && !bR.getRelative(0, -1, 0).getType().equals(Material.SOIL))
                         || (m.equals(Material.NETHER_WARTS) && !bR.getRelative(0, -1, 0).getType().equals(Material.SOUL_SAND)))
                     continue;

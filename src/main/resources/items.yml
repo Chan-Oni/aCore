@@ -29,3 +29,14 @@ farm_hoe:
     - "&fLigne 2"
     - "&fLigne 3..."
   durability: 2000
+
+  #Dynamite
+dynamite:
+  material: "MAGMA_CREAM"
+  name: "&cDynamite"
+  glow: true
+  lore:
+    - "&fLigne 1"
+    - "&fLigne 2"
+    - "&fLigne 3..."
+  unbreakable: true
