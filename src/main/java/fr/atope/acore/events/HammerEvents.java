@@ -3,13 +3,10 @@ package fr.atope.acore.events;
 import fr.atope.acore.ACore;
 import fr.atope.acore.items.ItemManager;
 import fr.leyra.objects.ItemStackBuilder;
+import fr.leyra.objects.NBTEditor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.craftbukkit.v1_8_R3.CraftWorld;
-import org.bukkit.craftbukkit.v1_8_R3.block.CraftBlock;
-import org.bukkit.entity.EntityType;
-import org.bukkit.entity.ExperienceOrb;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -17,8 +14,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,6 +32,7 @@ public class HammerEvents implements Listener {
         Block block = event.getBlock();
 
         if (!main.getWorldGuardManager().canBuild(player, block.getLocation())) return;
+        if(main.getFactionManager().isInEnnemyTerritory(event.getPlayer())) return;
 
         if (player.getItemInHand() == null) return;
         if (!player.getItemInHand().hasItemMeta()) return;
@@ -47,7 +43,11 @@ public class HammerEvents implements Listener {
         if (!ItemStackBuilder.checkItemsWithoutLore(player.getItemInHand(), ItemManager.getInstance().getItems().get("hammer")))
             return;
 
-        for (Block blocks : getSquare(block.getLocation(), 3)) {
+        if (!NBTEditor.hasNBTTag(item, "hammer")) return;
+
+        int i = NBTEditor.getInt(item, "hammer");
+
+        for (Block blocks : getSquare(block.getLocation(), i)) {
             blocks.breakNaturally(player.getItemInHand());
         }
         player.setItemInHand(new ItemStackBuilder(player.getItemInHand()).removeCustDura(1, main.getDurabilityPlaceholder()).make());

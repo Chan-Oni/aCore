@@ -80,13 +80,21 @@
             <version>1.8.8-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+        <!--FactionBridge-->
+        <dependency>
+            <groupId>FactionBridge</groupId>
+            <artifactId>FactionBridge</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/library/FactionsBridge-1.3.8.jar</systemPath>
+        </dependency>
         <!--VCore-->
         <dependency>
             <groupId>VCore</groupId>
             <artifactId>VCore</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>${basedir}/vcore/original-VCore-1.0.jar</systemPath>
+            <systemPath>${basedir}/library/original-VCore-1.0.jar</systemPath>
         </dependency>
         <!--Vault-->
         <dependency>

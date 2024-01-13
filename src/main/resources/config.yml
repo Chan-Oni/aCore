@@ -1,24 +1,74 @@
+########################################################################
+# » LISTE DES PERMISSIONS
 permissions:
   acore-use: "acore.command.use"
   acore-reload: "acore.command.reload"
   items-command: "acore.item-command.use"
   items-list: "acore.item-command.list"
   vision-use: "acore.vision.use"
+  trash-use: "acore.trash.use"
   chat-command-use: "acore.chat-command.use"
   chat-bypass: "acore.chat.bypass"
+  bottle-exp-use: "acore.bottlexp.use"
+########################################################################
 
+########################################################################
+# » menu du /poubelle
+trash-menu-name: "&ePoubelle"
+# » nombre de rangés du /poubelle
+trash-menu-rows: 6
+########################################################################
+
+########################################################################
+# » Délai ( en secondes ) après chaque première connexion ; /bienvenue
+# » Mettre à 0 si au délai voulu, les joueurs pourront /bienvenue
+#   sans pression.
+welcome-delay: 10
+########################################################################
+
+########################################################################
+# » Bouteilles d'xp du /bottlexp ( l'item )
+bottle_xp_item:
+  name: "&eBouteille d'xp &7| &6%player_name%"
+  glow: true
+  lore:
+    - "&eBouteille d'xp"
+    - "&eContenant %xp% xp"
+########################################################################
+
+########################################################################
+# » Détermine si la houe de farm drop les graines de blé.
 farm-hoe-drops-seed: true
+########################################################################
 
+########################################################################
+# » Détermine si les items ayant le tag "infinite: true" peuvent être drop.
+enable-infinite-tools-drop: false
+########################################################################
+
+########################################################################
+#                             » CHAT «
+#
+# » Délai minimum en seconde entre chaque message.
 anti-spam-cooldown: 3
+# » Maximum de majuscules par message, mettre à 0 si aucun anti-caps n'est voulu.
+anti-caps-limite: 5
+########################################################################
 
+########################################################################
+# » PROTECTIONS - ANTI
+#
+# » Mettre la liste des matériaux afin de désactiver leur craft.
 anti-craft:
   - 'BEDROCK'
-
+# » Mettre la liste des gros mots !
 anti-insulte:
   - 'fdp'
   - 'connard'
   - 'fils de neuille'
   - 'salope'
-
+# » Mettre la liste des id des potions à désactivers.
+# » Pour désactiver la potion de force II il faut mettre :
 anti-potions:
-  - ''
+  STRENGTH: 2
+########################################################################

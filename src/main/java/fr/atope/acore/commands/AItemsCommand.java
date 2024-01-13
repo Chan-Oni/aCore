@@ -2,7 +2,7 @@ package fr.atope.acore.commands;
 
 import fr.atope.acore.ACore;
 import fr.atope.acore.items.ItemManager;
-import fr.atope.acore.menu.AMenu;
+import fr.atope.acore.menu.AItemsMenu;
 import fr.leyra.commands.Command;
 import fr.leyra.commands.CommandArgs;
 import org.bukkit.Bukkit;
@@ -25,7 +25,7 @@ public class AItemsCommand {
 
         if (cmd.getArgs().length == 0) {
             if (!cmd.isPlayer()) return;
-            AMenu menu = new AMenu(cmd.getPlayer());
+            AItemsMenu menu = new AItemsMenu(cmd.getPlayer());
             menu.open();
         }
 

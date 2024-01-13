@@ -23,7 +23,7 @@ public class ACommand {
 
         ItemManager.getInstance().init();
 
-        cmd.getSender().sendMessage(main.getConfigManager().getConfigFile("messages.yml").getString("reload-message"));
+        cmd.getSender().sendMessage(main.getMessageConfig().getString("reload-message"));
 
     }
 

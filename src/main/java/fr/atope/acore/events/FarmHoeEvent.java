@@ -3,6 +3,7 @@ package fr.atope.acore.events;
 import fr.atope.acore.ACore;
 import fr.atope.acore.items.ItemManager;
 import fr.leyra.objects.ItemStackBuilder;
+import fr.leyra.objects.NBTEditor;
 import fr.leyra.utils.Randomness;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -29,6 +30,7 @@ public class FarmHoeEvent implements Listener {
         Player p = event.getPlayer();
         Block b = event.getBlock();
         if (!main.getWorldGuardManager().canBuild(event.getPlayer(), event.getBlock().getLocation())) return;
+        if(main.getFactionManager().isInEnnemyTerritory(event.getPlayer())) return;
         ItemStack it = event.getPlayer().getItemInHand();
         if (!ItemStackBuilder.checkItemsWithoutLore(it, ItemManager.getInstance().getItems().get("farm_hoe"))) return;
 
@@ -39,7 +41,11 @@ public class FarmHoeEvent implements Listener {
         Material m = b.getType();
         if (m == null) return;
 
-        int radius = 1;
+        if (!NBTEditor.hasNBTTag(p.getItemInHand(), "farm_hoe")) return;
+
+        int i = NBTEditor.getInt(p.getItemInHand(), "farm_hoe");
+
+        int radius = i/2;
 
         if(getSeedType(m) == null) return;
 

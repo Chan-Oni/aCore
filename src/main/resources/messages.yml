@@ -1,12 +1,26 @@
+# » Prefix qui sera utilisé dans tous les messages.
+# » utiliser %prefix%.
 prefix: "&8&l(&ea&6Core&8&l) &7» &f"
 
 no-permission: "%prefix% &cVous n'avez pas la permission !"
-
 only-player: "%prefix% Seul les joueurs peuvent exécuter la commande !"
-
 reload-message: "%prefix% Reloaded !"
 
+# » /vision
 vision-active: "%prefix% Night Vision &aactivé &f!"
 vision-non-active: "%prefix% Night Vision &cdésactivé &f!"
 
 chat-disabled: "%prefix% &cLe chat est actuellement désactivé."
+
+# » /furnace
+furnace-correct: '%prefix% &6Vous venez de faire cuire x%amount% %item% !'
+furnace-incorrect: '%prefix% &cFonte impossible.'
+
+# » /bottlexp
+not-enough-xp: '%prefix% &cVous n''avez pas assez d''expérience !'
+exp-success: '%prefix% &aVous avez converti votre xp en bouteille !'
+
+# » /bienvenue | /welcome | /bvn
+welcome-message: '%prefix% &f%player% a souhaité la bienvenue à %new_player% !'
+cannot-welcome-itself: '%prefix% &cVous ne pouvez pas vous souhaiter la bienvenue à vous-même !'
+no-one-to-welcome: '%prefix% &cIl n''y a personne à qui souhaiter la bienvenue !'

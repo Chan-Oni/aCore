@@ -3,6 +3,7 @@ version: '${project.version}'
 main: fr.atope.acore.ACore
 authors: [Leyra, Kairo]
 depend:
+  - FactionsBridge
+  - Vault
   - VCore
   - WorldGuard
-  - Vault

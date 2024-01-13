@@ -1,11 +1,31 @@
-#Display de la durabilité dans le lore des items.
-
+# » Display de la durabilité dans le lore des items,
+# » toujours en dernière ligne.
+# » %durability% --> durabilité actuelle de l'item.
+# » %max_durability% --> durabilité maximum de l'item.
 durability: "&f» &7Durabilité &8: &f%durability%&7/&8%max_durability%"
-
+########################################################################
+# ==» À LIRE ATTENTIVEMENT «==
 # Possibilité de rajouter les tags :
 #  unbreakable: true | pour indiquer qu'un item n'a pas de durabilité
-# si appliqué, il serait recommandé d'enlever le tag 'durability'.
-
+#  material: MATERIAL_TYPE | indiqué le type d'item utilisé
+#    » Liste des materials SPIGOT : https://helpch.at/docs/1.8/org/bukkit/Material.html
+#  name: "name" | nom de l'item
+#  lore: [LIST] | lore de l'item
+#    » À noter qu'il est possible d'intégrer les variables :
+#           * %kills% | nombre de kills de l'item
+#           ¥ %last_victim% | dernière personne tuée par l'item
+#  enchantments: | mettre sous forme "enchantment_name:level" ( voir hammer de base ).
+#    » Liste des enchantements SPIGOT : https://helpch.at/docs/1.8/index.html?org/bukkit/enchantments/Enchantment.html
+#  durability: <nombre> | durabilité *custom* de l'item.
+#     » si appliqué, il n'est pas nécessaire d'appliquer le tag unbreakable.
+#  glow: true/false | si l'item a un effet de surbrillance.
+#  /!\ : aucun enchantement ne sera visible une fois ce tag mis à 'true'.
+#  hammer: <nombre> | définit si un item peut casser plusieurs blocs en même temps.
+#     » le nombre désigne le rayon ( ex : 3 = cassage en 3x3x3 )
+#  farm_hoe: <nombre> | idem que pour le hammer.
+#  infinite: true/false | définit si l'item revient au propriétaire après sa mort.
+#
+########################################################################
 #Hammer
 hammer:
   material: "DIAMOND_PICKAXE"
@@ -18,7 +38,8 @@ hammer:
     - "&fLigne 2"
     - "&fLigne 3..."
   durability: 10000
-
+  hammer: 3
+########################################################################
 #Houe de farm
 farm_hoe:
   material: "GOLD_HOE"
@@ -29,8 +50,9 @@ farm_hoe:
     - "&fLigne 2"
     - "&fLigne 3..."
   durability: 2000
-
-  #Dynamite
+  farm_hoe: 3
+########################################################################
+#Dynamite
 dynamite:
   material: "MAGMA_CREAM"
   name: "&cDynamite"
@@ -40,3 +62,27 @@ dynamite:
     - "&fLigne 2"
     - "&fLigne 3..."
   unbreakable: true
+########################################################################
+#Chunk Buster
+chunk_buster:
+  material: "ENDER_PORTAL_FRAME"
+  name: "&aChunk Harvester/Buster"
+  glow: true
+  lore:
+    - "&fLigne 1"
+    - "&fLigne 2"
+    - "&fLigne 3..."
+########################################################################
+#Infinite sword
+infinite_sword_exemple:
+  material: "DIAMOND_SWORD"
+  name: "&bSword Infinie de la mort qui tue !"
+  enchantments:
+    DAMAGE_ALL: 5
+    DURABILITY: 5
+  lore:
+    - "&fkills : %kills%"
+    - "&fdernière victime : %last_victim%"
+    - "&f:)"
+  infinite: true
+########################################################################

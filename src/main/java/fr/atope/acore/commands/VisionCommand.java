@@ -15,7 +15,7 @@ public class VisionCommand {
 
     private ACore main;
 
-    private static HashMap<UUID, Boolean> night_vision = new HashMap<>();
+    private static final HashMap<UUID, Boolean> night_vision = new HashMap<>();
 
     public VisionCommand(ACore main) {
         this.main = main;
@@ -24,7 +24,7 @@ public class VisionCommand {
     @Command(name = "nightvision", aliases = "vision")
     public void visionCommand(CommandArgs cmd) {
 
-        ConfigFile msg = main.getConfigManager().getConfigFile("messages.yml");
+        ConfigFile msg = main.getMessageConfig();
 
         if (!cmd.isPlayer()) {
             cmd.getSender().sendMessage(msg.getString("only-player"));
@@ -36,7 +36,7 @@ public class VisionCommand {
             p.sendMessage(msg.getString("no-permission"));
             return;
         }
-        boolean k = night_vision.get(p.getUniqueId());
+        boolean k = night_vision.computeIfAbsent(p.getUniqueId(), uuid -> false);
         if (!k) {
             p.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, Integer.MAX_VALUE, 0, true));
             night_vision.put(p.getUniqueId(), true);
