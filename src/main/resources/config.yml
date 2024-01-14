@@ -47,6 +47,75 @@ enable-infinite-tools-drop: false
 ########################################################################
 
 ########################################################################
+# » configurations liés au Chunk Buster.
+# » délai en secondes avant la suppression du chunk
+# » mettre à 0 si évènement immédiat.
+delay-before-bust: 10
+# » mise en place d'une animation ( true/false ) pour moins de lag.
+buster-animation: true
+# » s'il y a lieu de confirmation lors du placage avec un menu.
+buster-menu-confirmation: true
+# » nom du menu de confirmation
+buster-menu-name: "&aConfirmation du Chunk Buster"
+# » nombre de colonnes du menu
+buster-menu-rows: 1
+# » configuration du menu.
+# » les termes autorisés pour 'action' sont :
+#       * validate ( valide le placage )
+#       * cancel ( annule le placage )
+#       * none ( ne fais rien, est décoratif )
+buster-menu-slots:
+  0:
+    material: STAINED_GLASS_PANE
+    id: 5
+    name: "&aValider"
+    action: validate
+  1:
+    material: STAINED_GLASS_PANE
+    id: 5
+    name: "&aValider"
+    action: validate
+  2:
+    material: STAINED_GLASS_PANE
+    id: 5
+    name: "&aValider"
+    action: validate
+  3:
+    material: STAINED_GLASS_PANE
+    id: 5
+    name: "&aValider"
+    action: validate
+  4:
+    material: STAINED_GLASS_PANE
+    id: 15
+    name: " "
+    action: none
+  5:
+    material: STAINED_GLASS_PANE
+    id: 14
+    name: "&aAnnuler"
+    action: cancel
+  6:
+    material: STAINED_GLASS_PANE
+    id: 14
+    name: "&aAnnuler"
+    action: cancel
+  7:
+    material: STAINED_GLASS_PANE
+    id: 14
+    name: "&aAnnuler"
+    action: cancel
+  8:
+    material: STAINED_GLASS_PANE
+    id: 14
+    name: "&aAnnuler"
+    action: cancel
+# » temps pendant lequel des particules seront affiché ( en secondes )
+# » mettre 0 si aucune particule n'est voulue.
+# » les particules sont créés en NMS donc cela n'impactera pas les performances du serveur :).
+buster-particles-delay: 10
+########################################################################
+########################################################################
 #                             » CHAT «
 #
 # » Délai minimum en seconde entre chaque message.

@@ -56,7 +56,7 @@ public class FarmHoeEvent implements Listener {
                 if (!isCropMature(bR)) {
                     continue;
                 }
-                if(bR.getType().equals(Material.CROPS) && !main.getConfig().getBoolean("farm-hoe-drops-seed")) {
+                if(bR.getType().equals(Material.CROPS) && !main.getConfigFile().getBoolean("farm-hoe-drops-seed")) {
                     p.getWorld().dropItemNaturally(bR.getLocation(), new ItemStack(Material.WHEAT, new Randomness().getRandomInt(1, 3)));
                 } else {
                     bR.breakNaturally();

@@ -35,13 +35,13 @@ public class PlayerJoinEvent implements Listener {
         if (event.getPlayer().hasPlayedBefore()) return;
 
         latestPlayer = event.getPlayer();
-        if(main.getConfig().getInt("welcome-delay") == 0) return;
+        if(main.getConfigFile().getInt("welcome-delay") == 0) return;
         new BukkitRunnable() {
             @Override
             public void run() {
                 latestPlayer = null;
             }
-        }.runTaskLater(main, main.getConfig().getInt("welcome-delay") * 20L);
+        }.runTaskLater(main, main.getConfigFile().getInt("welcome-delay") * 20L);
 
     }
 

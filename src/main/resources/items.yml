@@ -5,6 +5,7 @@
 durability: "&f» &7Durabilité &8: &f%durability%&7/&8%max_durability%"
 ########################################################################
 # ==» À LIRE ATTENTIVEMENT «==
+#
 # Possibilité de rajouter les tags :
 #  unbreakable: true | pour indiquer qu'un item n'a pas de durabilité
 #  material: MATERIAL_TYPE | indiqué le type d'item utilisé
@@ -13,8 +14,8 @@ durability: "&f» &7Durabilité &8: &f%durability%&7/&8%max_durability%"
 #  lore: [LIST] | lore de l'item
 #    » À noter qu'il est possible d'intégrer les variables :
 #           * %kills% | nombre de kills de l'item
-#           ¥ %last_victim% | dernière personne tuée par l'item
-#  enchantments: | mettre sous forme "enchantment_name:level" ( voir hammer de base ).
+#           * %last_victim% | dernière personne tuée par l'item
+#  enchantments: | mettre sous forme "enchantment_name:level".
 #    » Liste des enchantements SPIGOT : https://helpch.at/docs/1.8/index.html?org/bukkit/enchantments/Enchantment.html
 #  durability: <nombre> | durabilité *custom* de l'item.
 #     » si appliqué, il n'est pas nécessaire d'appliquer le tag unbreakable.
@@ -24,6 +25,15 @@ durability: "&f» &7Durabilité &8: &f%durability%&7/&8%max_durability%"
 #     » le nombre désigne le rayon ( ex : 3 = cassage en 3x3x3 )
 #  farm_hoe: <nombre> | idem que pour le hammer.
 #  infinite: true/false | définit si l'item revient au propriétaire après sa mort.
+#
+# /!\ IMPORTANT
+#  Certains items sont unique en leur fonctionnalité, comme par exemple :
+#     * chunkbuster
+#     * dynamite
+#     * pièces des armures de farm
+#     * farmtool
+#  Il est malheureusement impossible pour l'instant de créer d'autre items ayant la même fonctionnalité actuellement...
+# /!\ IMPORTANT
 #
 ########################################################################
 #Hammer
@@ -39,18 +49,6 @@ hammer:
     - "&fLigne 3..."
   durability: 10000
   hammer: 3
-########################################################################
-#Houe de farm
-farm_hoe:
-  material: "GOLD_HOE"
-  name: "&eHoue de Farm"
-  glow: true
-  lore:
-    - "&fLigne 1"
-    - "&fLigne 2"
-    - "&fLigne 3..."
-  durability: 2000
-  farm_hoe: 3
 ########################################################################
 #Dynamite
 dynamite:
@@ -72,6 +70,33 @@ chunk_buster:
     - "&fLigne 1"
     - "&fLigne 2"
     - "&fLigne 3..."
+########################################################################
+#Farmtool / Multitool
+farmtool:
+  material: "DIAMOND_AXE"
+  name: "&dMultitool"
+  enchantments:
+    DURABILITY: 4
+    DIG_SPEED: 6
+  lore:
+    - "&fLigne 1"
+    - "&fLigne 2"
+    - "&fLigne 3..."
+  durability: 2000
+########################################################################
+# » ITEMS À CRÉER : À VOUS DE FAIRE PREUVE DE CRÉATIVITÉ !
+########################################################################
+#Houe de farm
+farm_hoe:
+  material: "GOLD_HOE"
+  name: "&eHoue de Farm"
+  glow: true
+  lore:
+    - "&fLigne 1"
+    - "&fLigne 2"
+    - "&fLigne 3..."
+  durability: 2000
+  farm_hoe: 3
 ########################################################################
 #Infinite sword
 infinite_sword_exemple:

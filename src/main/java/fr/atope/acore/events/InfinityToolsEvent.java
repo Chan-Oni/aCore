@@ -79,7 +79,7 @@ public class InfinityToolsEvent implements Listener {
         ItemStack itemStack = event.getItemDrop().getItemStack();
         if (itemStack == null) return;
         boolean isInfinite = NBTEditor.getBoolean(itemStack, "isInfinite");
-        if (isInfinite) event.setCancelled(main.getConfig().getBoolean("enable-infinite-tools-drop"));
+        if (isInfinite) event.setCancelled(main.getConfigFile().getBoolean("enable-infinite-tools-drop"));
 
     }
 

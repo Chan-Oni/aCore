@@ -30,22 +30,21 @@ public class ItemManager {
             return;
         }
         for (String configKey : itemSections.getKeys(false)) {
-            if(configKey.equals("durability")) continue;
-            ItemStack itemStack = createItem(configKey);
+            if (configKey.equals("durability")) continue;
+            ItemStack itemStack = createItem(configFile, configKey);
             registerItems(configKey, itemStack);
         }
     }
 
-    public ItemStack createItem(String configKey) {
-        ConfigFile conf = main.getItemsConfig();
+    public ItemStack createItem(ConfigFile conf, String configKey) {
         if (!conf.getCustomConfig().isConfigurationSection(configKey)) {
             return new ItemStackBuilder(new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte) 14)).setName(ChatColor.RED + "INVALID ITEM " + configKey).make();
         }
         if (Material.getMaterial(conf.getString(configKey + ".material")) == null) {
             return new ItemStackBuilder(new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte) 14)).setName(ChatColor.RED + "INVALID MATERIAL " + conf.getString(configKey + ".material")).make();
         }
-        return new ItemStackBuilder(Material.getMaterial(conf.getString(configKey + ".material")))
-                .setFileMeta(configKey, main.getItemsConfig())
+        return new ItemStackBuilder(new ItemStack(Material.getMaterial(conf.getString(configKey + ".material")), 1, (byte) conf.getInt(configKey + ".id")))
+                .setFileMeta(configKey, conf)
                 .make();
     }
 

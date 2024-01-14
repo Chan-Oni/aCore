@@ -25,14 +25,14 @@ public class TrashCommand implements Listener {
             return;
         }
 
-        if(!cmd.getSender().hasPermission(main.getConfig().getString("permissions.trash-use"))) {
+        if(!cmd.getSender().hasPermission(main.getConfigFile().getString("permissions.trash-use"))) {
             cmd.getSender().sendMessage(main.getMessageConfig().getString("no-permission"));
         }
 
         Menu trashMenu = new Menu(cmd.getPlayer()) {
             @Override
             public String getMenuName() {
-                return ChatColor.translateAlternateColorCodes('&', main.getConfig().getString("trash-menu-name"));
+                return ChatColor.translateAlternateColorCodes('&', main.getConfigFile().getString("trash-menu-name"));
             }
 
             @Override

@@ -32,7 +32,7 @@ public class VisionCommand {
         }
 
         Player p = (Player) cmd.getSender();
-        if (!p.hasPermission(main.getConfig().getString("permissions.vision-use"))) {
+        if (!p.hasPermission(main.getConfigFile().getString("permissions.vision-use"))) {
             p.sendMessage(msg.getString("no-permission"));
             return;
         }

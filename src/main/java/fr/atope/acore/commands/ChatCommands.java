@@ -20,7 +20,7 @@ public class ChatCommands {
 
     @Command(name = "setchat", aliases = "chat")
     public void chatcommands(CommandArgs cmd) {
-        String permission = main.getConfig().getString("permissions.chat-command-use");
+        String permission = main.getConfigFile().getString("permissions.chat-command-use");
         String prefix = main.getPrefix();
 
         if (!cmd.getSender().hasPermission(permission)) {

@@ -26,7 +26,7 @@ public class BottleXPCommand {
     @Command(name = "bottlexp")
     public void bottlexpCommand(CommandArgs cmd) {
 
-        FileConfiguration conf = main.getConfig();
+        ConfigFile conf = main.getConfigFile();
         ConfigFile message = main.getMessageConfig();
 
         if (!cmd.isPlayer()) {

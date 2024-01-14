@@ -27,7 +27,7 @@ public class FurnaceCommand {
             return;
         }
 
-        if (!cmd.getSender().hasPermission(main.getConfig().getString("permissions.trash-use"))) {
+        if (!cmd.getSender().hasPermission(main.getConfigFile().getString("permissions.trash-use"))) {
             cmd.getSender().sendMessage(main.getMessageConfig().getString("no-permission"));
         }
 

@@ -21,7 +21,7 @@ public class AItemsCommand {
     @Command(name = "aitems", aliases = "aitem")
     public void itemsCommand(CommandArgs cmd) {
 
-        if (!cmd.getSender().hasPermission(main.getConfig().getString("permissions.items-command"))) return;
+        if (!cmd.getSender().hasPermission(main.getConfigFile().getString("permissions.items-command"))) return;
 
         if (cmd.getArgs().length == 0) {
             if (!cmd.isPlayer()) return;
@@ -34,7 +34,7 @@ public class AItemsCommand {
     @Command(name = "aitems.give", aliases = "aitem.give", usage = "aitems give [player] [item_id] [<amount>]")
     public void itemsGiveCommand(CommandArgs cmd) {
 
-        if (!cmd.getSender().hasPermission(main.getConfig().getString("permissions.items-command"))) return;
+        if (!cmd.getSender().hasPermission(main.getConfigFile().getString("permissions.items-command"))) return;
 
         if (cmd.getArgs().length < 3) {
             cmd.getSender().sendMessage(ChatColor.RED + "/aitems give %player% %item% %amount%");
@@ -76,7 +76,7 @@ public class AItemsCommand {
     @Command(name = "aitems.list", aliases = "aitem.list")
     public void itemsListCommand(CommandArgs cmd) {
 
-        if(!cmd.getSender().hasPermission(main.getConfig().getString("permissions.items-list"))) return;
+        if(!cmd.getSender().hasPermission(main.getConfigFile().getString("permissions.items-list"))) return;
 
         cmd.getSender().sendMessage(ChatColor.GRAY + "Voici la liste des items disponibles : ");
         ItemManager.getInstance().getItems().forEach((s, itemStack) -> cmd.getSender().sendMessage(ChatColor.GRAY + "- " + ChatColor.WHITE + s));

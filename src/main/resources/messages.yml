@@ -20,6 +20,10 @@ furnace-incorrect: '%prefix% &cFonte impossible.'
 not-enough-xp: '%prefix% &cVous n''avez pas assez d''expérience !'
 exp-success: '%prefix% &aVous avez converti votre xp en bouteille !'
 
+# » chunk buster
+# %delay% = délai avant la suppression du chunk.
+chunk-buster-initialization: "%prefix% &c/!\\ Le chunk sera détruit dans %delay% seconde(s) !"
+
 # » /bienvenue | /welcome | /bvn
 welcome-message: '%prefix% &f%player% a souhaité la bienvenue à %new_player% !'
 cannot-welcome-itself: '%prefix% &cVous ne pouvez pas vous souhaiter la bienvenue à vous-même !'

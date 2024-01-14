@@ -16,7 +16,7 @@ public class ACommand {
     @Command(name = "acore.reload", aliases = "acores")
     public void aCoreCommand(CommandArgs cmd) {
 
-        if (!cmd.getSender().hasPermission(main.getConfig().getString("permissions.acore-reload"))) return;
+        if (!cmd.getSender().hasPermission(main.getConfigFile().getString("permissions.acore-reload"))) return;
 
         main.reloadConfig();
         main.getConfigManager().reloadConfigs();

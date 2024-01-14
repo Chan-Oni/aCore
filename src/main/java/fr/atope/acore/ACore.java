@@ -2,6 +2,7 @@ package fr.atope.acore;
 
 import com.sk89q.worldguard.WorldGuard;
 import fr.atope.acore.commands.*;
+import fr.atope.acore.configs.ConfigurationFile;
 import fr.atope.acore.configs.ItemFile;
 import fr.atope.acore.configs.MessageFile;
 import fr.atope.acore.dependencies.FactionManager;
@@ -30,9 +31,9 @@ public final class ACore extends VPlugin {
         worldGuardManager = new WorldGuardManager();
         factionManager = new FactionManager();
 
-        saveDefaultConfig();
-        getConfigManager().registerConfig(new ItemFile());
-        getConfigManager().registerConfig(new MessageFile());
+        registerConfigs(new ConfigurationFile());
+        registerConfigs(new ItemFile());
+        registerConfigs(new MessageFile());
 
         ItemManager.getInstance().init();
 
@@ -70,6 +71,8 @@ public final class ACore extends VPlugin {
         registerEvent(new FarmHoeEvent(this));
         registerEvent(new DynamiteEvent(this));
         registerEvent(new BottleXPEvent());
+        registerEvent(new FarmToolEvent(this));
+        registerEvent(new ChunkBusterEvent(this));
     }
 
     private void sendEnableMessage(long sst) {
@@ -93,6 +96,10 @@ public final class ACore extends VPlugin {
 
     public ConfigFile getItemsConfig() {
         return getConfigManager().getConfigFile("items.yml");
+    }
+
+    public ConfigFile getConfigFile() {
+        return getConfigManager().getConfigFile("config.yml");
     }
 
     public WorldGuard getWorldGuard() {
